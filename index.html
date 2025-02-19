@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Реальний час у Києві</title>
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const options = { timeZone: "Europe/Kiev", hour: "2-digit", minute: "2-digit", second: "2-digit" };
+            document.getElementById("Kyiv").innerText = now.toLocaleTimeString("uk-UA", options);
+        }
+        setInterval(updateTime, 1000);
+    </script>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #555555;
+        }
+
+        #Kyiv {
+            font-size: 300px;
+            font-weight: bold;
+            color: #555555;
+        }
+    </style>
+</head>
+<body onload="updateTime()">
+    <h1>Реальний час у Києві:</h1>
+    <div id="Kyiv"></div>
+</body>
+</html>
